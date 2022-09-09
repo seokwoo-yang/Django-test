@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from shorteners.views import index, redirect_test
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
-]
+urlpatterns = [path("admin/", admin.site.urls), path("", index, name="index"), path("redirect", redirect_test)]
